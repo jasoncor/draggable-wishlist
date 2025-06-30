@@ -7,6 +7,7 @@ export const Spinner = (props: React.SVGProps<SVGSVGElement>) => {
       width={100}
       aria-label="Loading"
       {...props}
+      data-testid="spinner"
       className="animate-spin text-red-500 m-auto h-full"
     />
   );

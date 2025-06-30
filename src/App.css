@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-peach-500: #ef8774;
+  --color-red-500: #eb5a52;
+  --color-gray-500: #f4f4f4;
+  --color-orange-500: #f7cd98;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}

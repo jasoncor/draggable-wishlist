@@ -9,10 +9,6 @@ interface WishlistItemProps {
 }
 
 export const WishlistItem = ({ isHidden, children }: WishlistItemProps) => {
-  const handleRemove = () => {
-    // TODO: Implement remove functionality
-  };
-
   const background = isHidden
     ? "#ef8774"
     : "linear-gradient(85.5deg, #eb5a52 1.03%, #f7cd98 101.63%)";

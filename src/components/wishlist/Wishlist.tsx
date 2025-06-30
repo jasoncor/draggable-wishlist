@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import {
   DndContext,
-  closestCenter,
+  rectIntersection,
   type DragEndEvent,
   DragOverlay,
   type DragStartEvent,
@@ -156,7 +156,7 @@ export const Wishlist = () => {
         className="flex gap-8 py-8 px-6 max-w-[1400px]"
       >
         <DndContext
-          collisionDetection={closestCenter}
+          collisionDetection={rectIntersection}
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
         >
@@ -174,8 +174,8 @@ export const Wishlist = () => {
                 </DraggableItem>
               ))}
             </DroppableList>
-            <Separator text="Hidden list" />
             <DroppableList id="hiddenList">
+              <Separator text="Hidden list" />
               {hiddenItems.map((book) => (
                 <DraggableItem
                   key={book.id}

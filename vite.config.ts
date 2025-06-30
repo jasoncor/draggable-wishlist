@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
-  base: "/wishlist",
+  base: "/draggable-wishlist",
   plugins: [
     tanstackRouter({ target: "react", autoCodeSplitting: false }),
     react(),

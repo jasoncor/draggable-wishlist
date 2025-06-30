@@ -10,6 +10,6 @@ export interface Book {
 }
 
 export const getBooks = async (): Promise<Book[]> => {
-  const response = await axios.get<Book[]>("/wishlist/books.json");
+  const response = await axios.get<Book[]>("/draggable-wishlist/books.json");
   return response.data;
 };

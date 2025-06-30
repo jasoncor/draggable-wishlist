@@ -5,5 +5,5 @@ export const Route = createFileRoute("/")({
 });
 
 function RouteComponent() {
-  return <Navigate to="/wishlist" />;
+  return <Navigate to="/draggable-wishlist" />;
 }

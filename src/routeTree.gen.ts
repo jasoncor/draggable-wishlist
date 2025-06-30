@@ -10,43 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as WishlistIndexRouteImport } from './routes/wishlist/index'
+import { Route as DraggableWishlistIndexRouteImport } from './routes/draggable-wishlist/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WishlistIndexRoute = WishlistIndexRouteImport.update({
-  id: '/wishlist/',
-  path: '/wishlist/',
+const DraggableWishlistIndexRoute = DraggableWishlistIndexRouteImport.update({
+  id: '/draggable-wishlist/',
+  path: '/draggable-wishlist/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/wishlist': typeof WishlistIndexRoute
+  '/draggable-wishlist': typeof DraggableWishlistIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/wishlist': typeof WishlistIndexRoute
+  '/draggable-wishlist': typeof DraggableWishlistIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/wishlist/': typeof WishlistIndexRoute
+  '/draggable-wishlist/': typeof DraggableWishlistIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/wishlist'
+  fullPaths: '/' | '/draggable-wishlist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/wishlist'
-  id: '__root__' | '/' | '/wishlist/'
+  to: '/' | '/draggable-wishlist'
+  id: '__root__' | '/' | '/draggable-wishlist/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  WishlistIndexRoute: typeof WishlistIndexRoute
+  DraggableWishlistIndexRoute: typeof DraggableWishlistIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,11 +58,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/wishlist/': {
-      id: '/wishlist/'
-      path: '/wishlist'
-      fullPath: '/wishlist'
-      preLoaderRoute: typeof WishlistIndexRouteImport
+    '/draggable-wishlist/': {
+      id: '/draggable-wishlist/'
+      path: '/draggable-wishlist'
+      fullPath: '/draggable-wishlist'
+      preLoaderRoute: typeof DraggableWishlistIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -70,7 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  WishlistIndexRoute: WishlistIndexRoute,
+  DraggableWishlistIndexRoute: DraggableWishlistIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
